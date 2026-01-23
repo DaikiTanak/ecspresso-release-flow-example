@@ -1,0 +1,16 @@
+name: Dummy Deploy Workflow
+
+on:
+  workflow_call:
+    inputs:
+      deploy_env:
+        description: 'deploy env'
+        required: true
+        type: string
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Dummy step
+              run: echo "This is a dummy deploy workflow called with deploy_env=${{ inputs.deploy_env }}"

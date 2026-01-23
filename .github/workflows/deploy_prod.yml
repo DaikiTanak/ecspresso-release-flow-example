@@ -1,0 +1,14 @@
+name: deploy to Production
+
+on:
+  push:
+    branches:
+      - production
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/_deploy.yml
+    with:
+      deploy_env: prod
